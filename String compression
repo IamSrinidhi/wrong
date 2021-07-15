@@ -1,0 +1,21 @@
+import java.util.Scanner;
+class Solution {
+    public int compress(char[] chars) {
+    StringBuilder s= new StringBuilder();
+       int n=chars.length;
+        int count=0,j=0;
+       if(n==1)
+         return n;
+        for(int i=0;i<=n;i++) 
+        {if(chars[i]==chars[i+1])
+        { count++;
+            chars[i]=chars[j++];
+            s[]=;
+         }}
+    }
+        public static void main(String args[])
+        {
+          compress(char[] );  
+        }
+    
+}
