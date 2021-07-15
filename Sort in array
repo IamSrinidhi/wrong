@@ -1,0 +1,29 @@
+class Solution {
+    static void sorting(int[] nums,int a, int b )
+    {
+        
+        int t=nums[a];
+        nums[b]=nums[a];
+        nums[a]=t;
+    }
+    public int[] sortArrayByParityII(int[] nums) {
+        int j=1,i=0,n;
+        n=nums.length;
+        while(i<n)
+        {
+            while(j<n)
+            {if(nums[i]%2==0)
+            i+=2;
+        }
+            while(j<n)
+            { if(nums[i]%2!=0)
+                j+=2;
+            }
+            if(i<n||j<n)
+            { sorting(nums,i,j);}
+            i+=2;
+            j+=2;
+        }  
+        return nums;
+    }
+}
