@@ -1,0 +1,35 @@
+import java.util.*;
+class Primepairs
+{
+    static int prime(int a, int b)
+   {
+      int p1,p2,count=0,half;
+      for(int i=a;i<=b;i++)
+      { 
+          if(i%2!=0)
+        {
+          half=i/2;
+          while(half>0)
+          {
+             if(i%half!=0)
+               p2=i;
+              half--;
+          }
+            p1=p2;
+            if(Math.abs(p1-p2)==2)
+            return p1,p2;
+         }
+       }
+    }
+ public static void main(String args[])
+{
+   Scanner sc=new Scanner(System.in);
+   int r1,r2;
+   System.out.println("enter a range ");
+   r1=sc.nextInt();
+   r2=sc.nextInt();
+   prime(r1,r2);
+   System.out.println("Twin primes in the range");
+   System.out.println(prime());
+}
+}
