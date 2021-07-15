@@ -1,21 +1,34 @@
-import java.util.Scanner;
-class Solution {
-    public int compress(char[] chars) {
-    StringBuilder s= new StringBuilder();
-       int n=chars.length;
-        int count=0,j=0;
-       if(n==1)
-         return n;
-        for(int i=0;i<=n;i++) 
-        {if(chars[i]==chars[i+1])
-        { count++;
-            chars[i]=chars[j++];
-            s[]=;// STOPPED RIGHT HERE. I KNOW WHAT TO DO. JUST CAN'T IMPLEMENT IT PROPERLY!!!
-         }}
-    }
-        public static void main(String args[])
-        {
-          compress(char[] );  
-        }
-    
+import java.util.*;
+class Raj
+{
+public static void main(String args[])
+{
+Scanner sc=new Scanner(System.in);
+String input = sc.next();
+int count = 1;
+char last = input.charAt(0);
+StringBuilder output = new StringBuilder();
+for(int i = 1; i < input.length(); i++)
+{
+if(input.charAt(i) == last){
+count++;
+}else{
+if(count > 1)
+{
+output.append(""+last+count);
+}
+else{
+output.append(last);
+}
+count = 1;
+last = input.charAt(i);
+}
+}
+if(count > 1){
+output.append(""+last+count);
+}else{
+output.append(last);
+}
+System.out.println(output.toString());
+}
 }
